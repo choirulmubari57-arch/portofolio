@@ -1,39 +1,36 @@
 body{
     font-family: Arial;
-    background: #f4f4f4;
+    background:#f4f4f4;
     margin:0;
-    padding:0;
 }
 
 header{
-    background: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+nav{
+    background:#555;
+    text-align:center;
+    padding:10px;
+}
+
+nav a{
+    color:white;
+    margin:10px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 section{
-    padding: 20px;
-    margin: 20px;
-    background: white;
-    border-radius: 5px;
+    padding:20px;
 }
 
-footer{
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: whitr;
-}
-.profile{
-    width: 120px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.card{
-    background: #eee;
+.project{
+    background:white;
     padding:15px;
-    margin: 10px 0;
+    margin:10px 0;
     border-radius:5px;
 }
