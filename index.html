@@ -1,50 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Choirul Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio — Web Dev & Otomasi Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-    <h1>Choirul Mubari</h1>
-    <p>Python Learner | Future Freelancer</p>
-</header>
+  <!-- Noise overlay -->
+  <div class="noise"></div>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-</nav>
+  <!-- Grid lines background -->
+  <div class="grid-bg">
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+    <div class="grid-col"></div>
+  </div>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        Saya sedang belajar Python, automation, dan cybersecurity.
-        Saya membuat berbagai tools terminal menggunakan Python.
-    </p>
-</section>
-
-<section id="portfolio">
-    <h2>My Projects</h2>
-
-    <div class="project">
-        <h3>Python Web Crawler</h3>
-        <p>Tool untuk mengambil semua link dari sebuah website.</p>
+  <!-- ===== NAVIGASI ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-bracket">[</span>
+      <span class="nav__logo-text">NamaMu</span>
+      <span class="nav__logo-bracket">]</span>
     </div>
+    <ul class="nav__links">
+      <li><a href="#tentang" class="nav__link">tentang</a></li>
+      <li><a href="#keahlian" class="nav__link">keahlian</a></li>
+      <li><a href="#proyek" class="nav__link">proyek</a></li>
+      <li><a href="#kontak" class="nav__link">kontak</a></li>
+    </ul>
+    <button class="nav__cta" id="hireMeBtn">rekrut_saya()</button>
+  </nav>
 
-    <div class="project">
-        <h3>DNS Lookup Tool</h3>
-        <p>CLI tool untuk melihat informasi domain dan IP.</p>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="beranda">
+    <div class="hero__meta">
+      <span class="hero__tag">// tersedia untuk kerja</span>
+      <span class="hero__tag">Jakarta, ID</span>
     </div>
+    <h1 class="hero__title">
+      <span class="hero__title-line reveal-line">Membangun</span>
+      <span class="hero__title-line reveal-line accent">web modern.</span>
+      <span class="hero__title-line reveal-line">Mengotomasi</span>
+      <span class="hero__title-line reveal-line accent">data.</span>
+    </h1>
+    <div class="hero__desc">
+      <p class="reveal-fade">
+        Saya developer yang fokus membangun pengalaman web yang modern<br />
+        dan sistem otomasi data yang cerdas dan efisien.
+      </p>
+    </div>
+    <div class="hero__terminal reveal-fade">
+      <div class="terminal__bar">
+        <span class="terminal__dot red"></span>
+        <span class="terminal__dot yellow"></span>
+        <span class="terminal__dot green"></span>
+        <span class="terminal__file">~/portofolio</span>
+      </div>
+      <div class="terminal__body">
+        <span class="terminal__prompt">$ </span>
+        <span class="terminal__cmd" id="typedCmd"></span>
+        <span class="terminal__cursor">▋</span>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>gulir</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
 
-</section>
+  <!-- ===== TENTANG ===== -->
+  <section class="about section" id="tentang">
+    <div class="section__label">
+      <span class="section__num">01</span>
+      <span class="section__title">tentang</span>
+    </div>
+    <div class="about__content">
+      <div class="about__text">
+        <p class="about__lead">
+          Halo — saya developer full-stack &amp; data engineer yang suka
+          mengubah masalah rumit menjadi solusi yang elegan.
+        </p>
+        <p>
+          Saya membangun aplikasi web yang responsif dan berperforma tinggi,
+          serta merancang pipeline data otomatis yang menghemat berjam-jam
+          pekerjaan manual. Stack saya mencakup dari frontend UX hingga
+          alur kerja ETL dan skrip otomasi di backend.
+        </p>
+        <div class="about__stats">
+          <div class="about__stat">
+            <span class="about__stat-num counter" data-target="20">0</span>
+            <span class="about__stat-label">proyek selesai</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num counter" data-target="3">0</span>
+            <span class="about__stat-label">tahun pengalaman</span>
+          </div>
+          <div class="about__stat">
+            <span class="about__stat-num counter" data-target="100">0</span>
+            <span class="about__stat-label">% bahan bakar kopi</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__image-block">
+        <div class="about__image-placeholder">
+          <span class="about__image-text">FOTO<br/>KAMU</span>
+          <div class="about__image-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: choirulmubari57@email.com</p>
-</section>
+  <!-- ===== KEAHLIAN ===== -->
+  <section class="skills section" id="keahlian">
+    <div class="section__label">
+      <span class="section__num">02</span>
+      <span class="section__title">keahlian</span>
+    </div>
+    <div class="skills__grid">
 
+      <div class="skill-card" data-index="0">
+        <div class="skill-card__icon">&#9670;</div>
+        <h3 class="skill-card__name">Web Development</h3>
+        <p class="skill-card__desc">Membangun antarmuka modern yang responsif dan API yang tangguh, dari pixel sampai database.</p>
+        <div class="skill-card__tags">
+          <span>HTML/CSS</span><span>JavaScript</span><span>React</span>
+          <span>Node.js</span><span>REST API</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-index="1">
+        <div class="skill-card__icon">&#9670;</div>
+        <h3 class="skill-card__name">Otomasi Data</h3>
+        <p class="skill-card__desc">Merancang pipeline ETL dan skrip yang mengotomasi alur kerja data secara masif dan efisien.</p>
+        <div class="skill-card__tags">
+          <span>Python</span><span>Pandas</span><span>Selenium</span>
+          <span>SQL</span><span>Airflow</span>
+        </div>
+      </div>
+
+      <div class="skill-card" data-index="2">
+        <div class="skill-card__icon">&#9670;</div>
+        <h3 class="skill-card__name">Tools & Workflow</h3>
+        <p class="skill-card__desc">Tooling yang efisien, CI/CD, dan developer experience yang menjaga proyek tetap berjalan cepat.</p>
+        <div class="skill-card__tags">
+          <span>Git</span><span>Docker</span><span>Linux</span>
+          <span>GitHub Actions</span><span>VS Code</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROYEK ===== -->
+  <section class="projects section" id="proyek">
+    <div class="section__label">
+      <span class="section__num">03</span>
+      <span class="section__title">proyek</span>
+    </div>
+    <div class="projects__list">
+
+      <article class="project-card" data-index="0">
+        <div class="project-card__number">001</div>
+        <div class="project-card__content">
+          <span class="project-card__type">web development</span>
+          <h3 class="project-card__title">Nama Proyek di Sini</h3>
+          <p class="project-card__desc">
+            Deskripsi singkat tentang apa yang dikerjakan proyek ini
+            dan masalah apa yang berhasil diselesaikan.
+          </p>
+          <div class="project-card__stack">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          </div>
+        </div>
+        <div class="project-card__links">
+          <a href="#" class="project-card__link" aria-label="Lihat proyek">&#8599;</a>
+          <a href="#" class="project-card__link" aria-label="GitHub">&#60;/&#62;</a>
+        </div>
+      </article>
+
+      <article class="project-card" data-index="1">
+        <div class="project-card__number">002</div>
+        <div class="project-card__content">
+          <span class="project-card__type">otomasi data</span>
+          <h3 class="project-card__title">Pipeline Otomasi Laporan</h3>
+          <p class="project-card__desc">
+            Pipeline ETL yang memproses ribuan data setiap hari,
+            memangkas waktu pelaporan manual hingga 90%.
+          </p>
+          <div class="project-card__stack">
+            <span>Python</span><span>Pandas</span><span>Airflow</span>
+          </div>
+        </div>
+        <div class="project-card__links">
+          <a href="#" class="project-card__link" aria-label="Lihat proyek">&#8599;</a>
+          <a href="#" class="project-card__link" aria-label="GitHub">&#60;/&#62;</a>
+        </div>
+      </article>
+
+      <article class="project-card" data-index="2">
+        <div class="project-card__number">003</div>
+        <div class="project-card__content">
+          <span class="project-card__type">web + data</span>
+          <h3 class="project-card__title">Dashboard Analitik</h3>
+          <p class="project-card__desc">
+            Dashboard analitik real-time yang memvisualisasikan data dari
+            berbagai sumber menjadi insight yang bisa langsung ditindaklanjuti.
+          </p>
+          <div class="project-card__stack">
+            <span>Vue.js</span><span>FastAPI</span><span>Selenium</span>
+          </div>
+        </div>
+        <div class="project-card__links">
+          <a href="#" class="project-card__link" aria-label="Lihat proyek">&#8599;</a>
+          <a href="#" class="project-card__link" aria-label="GitHub">&#60;/&#62;</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== KONTAK ===== -->
+  <section class="contact section" id="kontak">
+    <div class="section__label">
+      <span class="section__num">04</span>
+      <span class="section__title">kontak</span>
+    </div>
+    <div class="contact__content">
+      <h2 class="contact__headline">
+        Ayo bangun<br /><em>sesuatu yang keren.</em>
+      </h2>
+      <div class="contact__links">
+        <a href="mailto:kamu@email.com" class="contact__item">
+          <span class="contact__item-label">email</span>
+          <span class="contact__item-value">kamu@email.com</span>
+          <span class="contact__item-arrow">→</span>
+        </a>
+        <a href="https://github.com" target="_blank" class="contact__item">
+          <span class="contact__item-label">github</span>
+          <span class="contact__item-value">github.com/namamu</span>
+          <span class="contact__item-arrow">→</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="contact__item">
+          <span class="contact__item-label">linkedin</span>
+          <span class="contact__item-value">linkedin.com/in/namamu</span>
+          <span class="contact__item-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <span class="footer__left">© 2026 NamaMu</span>
+    <span class="footer__right">
+      dirancang &amp; dibangun dengan <span class="footer__heart">♥</span>
+    </span>
+  </footer>
+
+  <!-- Modal Rekrut Saya -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal__close" id="modalClose">✕</button>
+      <span class="modal__tag">// terbuka untuk peluang baru</span>
+      <h2 class="modal__title">Ayo ngobrol!</h2>
+      <p class="modal__body">
+        Saya saat ini terbuka untuk proyek freelance maupun kesempatan kerja penuh waktu.
+        Hubungi saya dan kita diskusi!
+      </p>
+      <a href="mailto:kamu@email.com" class="modal__btn">kirim_pesan()</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
