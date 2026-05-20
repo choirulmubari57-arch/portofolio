@@ -144,7 +144,7 @@ img { max-width: 100%; display: block; }
 
 .hero__title {
   font-family: var(--font-sans);
-  font-size: clamp(1.9rem, 7.5vw, 8rem);
+  font-size: clamp(1.6rem, 6.5vw, 8rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -300,7 +300,35 @@ img { max-width: 100%; display: block; }
   gap: 2rem;
 }
 
-.about__image-block { display: none; }
+.about__image-block { display: block; margin-top: 2rem; }
+
+.about__image-placeholder {
+  position: relative;
+  width: 160px;
+  aspect-ratio: 3/4;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__image-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.about__image-border {
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--accent);
+  border-radius: calc(var(--radius) + 4px);
+  pointer-events: none;
+}
 
 .about__lead {
   font-size: clamp(1.1rem, 4.5vw, 1.4rem);
@@ -693,7 +721,7 @@ img { max-width: 100%; display: block; }
     grid-template-columns: 1fr 280px;
     gap: 4rem;
   }
-  .about__image-block { display: block; }
+  .about__image-block { display: block; margin-top: 0; }
   .about__image-placeholder {
     position: relative;
     width: 100%;
