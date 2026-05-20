@@ -122,10 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) {
-        el.textContent = target;
+        el.textContent = target.toLocaleString("id-ID");
         clearInterval(timer);
       } else {
-        el.textContent = Math.floor(current);
+        el.textContent = Math.floor(current).toLocaleString("id-ID");
       }
     }, langkah);
   }
