@@ -179,3 +179,38 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(section => sectionObserver.observe(section));
 
 });
+// Render proyek dari dashboard
+const proyekData = JSON.parse(localStorage.getItem('proyek') || '[]');
+
+const katLabel = {
+  web: 'web development',
+  data: 'otomasi data',
+  webdata: 'web + data'
+};
+
+const list = document.querySelector('.projects__list');
+if (proyekData.length > 0) {
+  list.innerHTML = proyekData.map((p, i) => `
+    <article class="project-card" data-index="${i}">
+      <div class="project-card__number">00${i+1}</div>
+      <div class="project-card__content">
+        <span class="project-card__type">${katLabel[p.kat]}</span>
+        <h3 class="project-card__title">${p.nama}</h3>
+        <p class="project-card__desc">${p.deskripsi}</p>
+        ${p.foto1 || p.foto2 ? `
+          <div class="project-images">
+            ${p.foto1 ? `<img src="${p.foto1}" class="project-image">` : ''}
+            ${p.foto2 ? `<img src="${p.foto2}" class="project-image">` : ''}
+          </div>` : ''}
+        ${p.demo ? `<a href="${p.demo}" target="_blank" class="project-demo">demo</a>` : ''}
+        <div class="project-card__stack">
+          ${p.tags.map(t => `<span>${t}</span>`).join('')}
+        </div>
+      </div>
+      <div class="project-card__links">
+        ${p.demo ? `<a href="${p.demo}" target="_blank" class="project-card__link">&#8599;</a>` : ''}
+        ${p.github ? `<a href="${p.github}" target="_blank" class="project-card__link">&#60;/&#62;</a>` : ''}
+      </div>
+    </article>
+  `).join('');
+}
